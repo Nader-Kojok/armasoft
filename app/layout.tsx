@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description: 'Transformez vos idées en applications web et mobiles performantes avec ArmaSoft. Expertise en développement et solutions sur mesure.',
     images: [
       {
-        url: 'https://armasoft.com/images/og-image.jpg',
+        url: 'https://armasoft.com/card_ok.png',
         width: 1200,
         height: 630,
         alt: 'ArmaSoft - Solutions Digitales Innovantes'
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ArmaSoft - Solutions Digitales Innovantes au Sénégal',
+    title: 'ArmaSoft - Solutions Digitales Innovantes en Côte d\'Ivoire',
     description: 'Développement web et mobile, solutions sur mesure. Transformez vos idées en applications performantes avec ArmaSoft.',
-    images: ['https://armasoft.com/images/twitter-image.jpg'],
+    images: ['https://armasoft.com/card_ok.png'],
     creator: '@ArmaSoft',
     site: '@ArmaSoft'
   },
