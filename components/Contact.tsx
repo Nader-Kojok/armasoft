@@ -17,7 +17,7 @@ export default function Contact() {
     {
       icon: faPhone,
       title: "Téléphone",
-      content: "+221 77 000 00 00",
+      content: "+225 07 000 00 00",
       delay: 0.1
     },
     {
@@ -29,7 +29,7 @@ export default function Contact() {
     {
       icon: faLocationDot,
       title: "Adresse",
-      content: "Dakar, Sénégal\nPoint E, Rue de Saint-Louis",
+      content: "Abidjan, Côte d'Ivoire\nCocody, Rue des Jardins",
       delay: 0.3
     }
   ]

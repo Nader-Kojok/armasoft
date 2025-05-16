@@ -90,7 +90,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
                 <FontAwesomeIcon icon={faPhone} className="text-[#F49015] w-4 h-4" />
-                <span className="text-white/70 text-sm">+221 77 000 00 00</span>
+                <span className="text-white/70 text-sm">+225 07 000 00 00</span>
               </li>
               <li className="flex items-center space-x-3">
                 <FontAwesomeIcon icon={faEnvelope} className="text-[#F49015] w-4 h-4" />
@@ -98,7 +98,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <FontAwesomeIcon icon={faLocationDot} className="text-[#F49015] w-4 h-4 mt-1" />
-                <span className="text-white/70 text-sm">Dakar, Sénégal<br/>Point E, Rue de Saint-Louis</span>
+                <span className="text-white/70 text-sm">Abidjan, Côte d'Ivoire<br/>Cocody, Rue des Jardins</span>
               </li>
             </ul>
           </motion.div>

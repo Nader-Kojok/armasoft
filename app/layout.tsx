@@ -21,11 +21,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://armasoft.com'),
   title: {
-    default: 'ArmaSoft - Solutions Digitales Innovantes au Sénégal | Développement Web & Mobile',
+    default: 'ArmaSoft - Solutions Digitales Innovantes en Côte d\'Ivoire | Développement Web & Mobile',
     template: '%s | ArmaSoft'
   },
   description: 'ArmaSoft est votre partenaire de confiance pour des solutions digitales innovantes. Développement web, applications mobiles, et solutions sur mesure pour transformer vos idées en réalité.',
-  keywords: ['développement web', 'applications mobiles', 'solutions digitales', 'Sénégal', 'Dakar', 'innovation', 'technologie', 'transformation digitale'],
+  keywords: ['développement web', 'applications mobiles', 'solutions digitales', 'Côte d\'Ivoire', 'Abidjan', 'innovation', 'technologie', 'transformation digitale'],
   authors: [{ name: 'ArmaSoft', url: 'https://armasoft.com' }],
   creator: 'ArmaSoft',
   publisher: 'ArmaSoft',
@@ -45,10 +45,10 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'fr_SN',
+    locale: 'fr_CI',
     url: 'https://armasoft.com',
     siteName: 'ArmaSoft',
-    title: 'ArmaSoft - Solutions Digitales Innovantes au Sénégal',
+    title: 'ArmaSoft - Solutions Digitales Innovantes en Côte d\'Ivoire',
     description: 'Transformez vos idées en applications web et mobiles performantes avec ArmaSoft. Expertise en développement et solutions sur mesure.',
     images: [
       {
