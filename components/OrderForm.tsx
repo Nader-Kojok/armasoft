@@ -63,7 +63,7 @@ export default function OrderForm({ sizes, frames, additionalServices, onCustomO
     <section id="order" className="relative py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="section-title">
+          <h2 className="section-title leading-tight py-2">
             Transformez Votre Vision Technologique
           </h2>
           <p className="section-subtitle">

@@ -44,7 +44,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
       >
         <motion.h1 
-          className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#3B92C9]"
+          className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#3B92C9] leading-tight py-2"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
