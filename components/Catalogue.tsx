@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -85,6 +85,18 @@ const categories = ["Tous", "Cloud", "Cybersécurité", "Applications", "Infrast
 export default function Catalogue() {
   const [activeCategory, setActiveCategory] = useState("Tous")
   const [hoveredId, setHoveredId] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const filteredSolutions = solutions.filter(solution => 
     activeCategory === "Tous" ? true : solution.category === activeCategory
@@ -139,7 +151,7 @@ export default function Catalogue() {
               onHoverEnd={() => setHoveredId(null)}
               className="relative group"
             >
-              <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+              <div className="relative aspect-[4/3] md:aspect-[3/4] rounded-lg overflow-hidden">
                 <Image
                   src={solution.image}
                   alt={solution.title}
@@ -147,18 +159,18 @@ export default function Catalogue() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Overlay avec les informations */}
-                <div className={`absolute inset-0 bg-black/60 flex flex-col justify-end p-6 transition-opacity duration-300 ${
-                  hoveredId === solution.id ? 'opacity-100' : 'opacity-0'
+                <div className={`absolute inset-0 bg-black/60 flex flex-col justify-end p-4 md:p-6 transition-opacity duration-300 ${
+                  hoveredId === solution.id || isMobile ? 'opacity-100' : 'opacity-0'
                 }`}>
-                  <h3 className="text-xl font-bold text-white mb-2">{solution.title}</h3>
-                  <p className="text-white/90 mb-4">{solution.description}</p>
-                  <button className="mt-4 px-6 py-2 bg-[#F49015] text-white rounded-lg hover:bg-[#F49015]/90 transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-1 md:mb-2">{solution.title}</h3>
+                  <p className="text-sm md:text-base text-white/90 mb-2 md:mb-4">{solution.description}</p>
+                  <button className="mt-2 md:mt-4 px-4 md:px-6 py-1.5 md:py-2 bg-[#F49015] text-white rounded-lg hover:bg-[#F49015]/90 transition-colors text-sm md:text-base">
                     En savoir plus
                   </button>
                 </div>
               </div>
               {/* Badge de catégorie */}
-              <div className="absolute top-4 right-4 px-3 py-1 bg-black/60 rounded-full text-sm text-white">
+              <div className="absolute top-2 md:top-4 right-2 md:right-4 px-2 md:px-3 py-0.5 md:py-1 bg-black/60 rounded-full text-xs md:text-sm text-white">
                 {solution.category}
               </div>
             </motion.div>

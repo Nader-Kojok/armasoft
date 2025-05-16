@@ -70,8 +70,8 @@ export default function OrderForm({ sizes, frames, additionalServices, onCustomO
             Découvrez comment nos solutions innovantes peuvent propulser votre entreprise vers le succès numérique.
             Planifiez une consultation personnalisée avec nos experts.
           </p>
-          <div className="flex gap-6 justify-center mb-12 w-full">
-            <div className="card flex items-center gap-3 flex-1 max-w-[300px]">
+          <div className="flex flex-col md:flex-row gap-6 justify-center mb-12 w-full items-center md:items-stretch">
+            <div className="card flex items-center gap-3 w-full max-w-[300px]">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -79,7 +79,7 @@ export default function OrderForm({ sizes, frames, additionalServices, onCustomO
               </div>
               <span className="text-white/90">Solutions sur mesure</span>
             </div>
-            <div className="card flex items-center gap-3 flex-1 max-w-[300px]">
+            <div className="card flex items-center gap-3 w-full max-w-[300px]">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -87,7 +87,7 @@ export default function OrderForm({ sizes, frames, additionalServices, onCustomO
               </div>
               <span className="text-white/90">Sécurité maximale</span>
             </div>
-            <div className="card flex items-center gap-3 flex-1 max-w-[300px]">
+            <div className="card flex items-center gap-3 w-full max-w-[300px]">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -105,7 +105,7 @@ export default function OrderForm({ sizes, frames, additionalServices, onCustomO
           viewport={{ once: true }}
           className="card overflow-hidden"
         >
-          <form onSubmit={handleSubmit} className="p-8 space-y-8">
+          <form onSubmit={handleSubmit} className="p-2 md:p-8 space-y-8">
             <h3 className="text-2xl font-bold text-white text-center mb-8">Demander un devis</h3>
             {/* Type de Service */}
             <div>
