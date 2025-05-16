@@ -52,8 +52,9 @@ export default function Home() {
               description: 'Formation complète et accompagnement personnalisé'
             }
           }}
-          onCustomOrder={(size, frame, orderType) => {
+          onCustomOrder={async (size, frame, orderType) => {
             console.log('Consultation demandée:', { size, frame, orderType })
+            return true // Return a successful result
           }}
         />
 

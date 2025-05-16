@@ -1,8 +1,8 @@
 'use client'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons/index'
+import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons/index'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'

@@ -3,9 +3,43 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloud, faShieldHalved, faMobileScreen, faServer } from '@fortawesome/free-solid-svg-icons'
+import { faCloud, faShieldHalved, faMobileScreen, faRocket } from '@fortawesome/free-solid-svg-icons'
+import OrderFormModal from './OrderFormModal'
+import { useState } from 'react'
+
+// Mock data for the OrderFormModal
+const mockSizes = [
+  { id: 'startup', name: 'Startup', dimensions: 'Pour les startups en croissance', price: 999 },
+  { id: 'professional', name: 'Professional', dimensions: 'Medium', price: 1999 },
+  { id: 'enterprise', name: 'Enterprise', dimensions: 'Large', price: 2999 }
+]
+
+const mockFrames = [
+  { id: 'web', name: 'Web Application', description: 'Application web moderne et responsive' },
+  { id: 'mobile', name: 'Mobile App', description: 'Application mobile native iOS et Android' },
+  { id: 'ecommerce', name: 'E-commerce', description: 'Plateforme de vente en ligne complète' }
+]
+
+const mockAdditionalServices = {
+  support: {
+    price: 299,
+    freeThreshold: 1999,
+    title: 'Support Premium',
+    icon: 'headset',
+    description: 'Assistance technique 24/7 et maintenance continue'
+  },
+  training: {
+    price: 499,
+    freeThreshold: 2999,
+    title: 'Formation',
+    icon: 'graduation-cap',
+    description: 'Formation complète pour votre équipe'
+  }
+}
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-12">
       {/* Background image with reduced opacity */}
@@ -87,15 +121,30 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <motion.a
-          href="#catalogue"
-          className="inline-block bg-[#F49015] hover:bg-[#F49015]/90 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg text-sm md:text-lg shadow-lg shadow-[#F49015]/20 hover:shadow-xl hover:shadow-[#F49015]/30 transition-all duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Découvrir nos solutions
-        </motion.a>
+        <div className="flex justify-center">
+          <motion.button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-[#F49015] hover:bg-[#F49015]/90 text-white font-medium py-4 px-8 rounded-lg flex items-center justify-center gap-3 transition-colors text-lg"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <FontAwesomeIcon icon={faRocket} className="text-xl" />
+            Démarrer Votre Projet
+          </motion.button>
+        </div>
       </motion.div>
+
+      <OrderFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        sizes={mockSizes}
+        frames={mockFrames}
+        additionalServices={mockAdditionalServices}
+        onCustomOrder={async (size, frame, orderType) => {
+          // Mock implementation
+          return true
+        }}
+      />
     </section>
   )
 }

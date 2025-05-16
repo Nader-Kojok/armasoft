@@ -5,11 +5,43 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faXmark, faRocket } from '@fortawesome/free-solid-svg-icons'
+import OrderFormModal from './OrderFormModal'
+
+// Mock data for the OrderFormModal
+const mockSizes = [
+  { id: '1', name: 'Basic', dimensions: 'Small', price: 999 },
+  { id: '2', name: 'Professional', dimensions: 'Medium', price: 1999 },
+  { id: '3', name: 'Enterprise', dimensions: 'Large', price: 2999 }
+]
+
+const mockFrames = [
+  { id: '1', name: 'Web Application', description: 'Application web moderne et responsive' },
+  { id: '2', name: 'Mobile App', description: 'Application mobile native iOS et Android' },
+  { id: '3', name: 'E-commerce', description: 'Plateforme de vente en ligne complète' }
+]
+
+const mockAdditionalServices = {
+  support: {
+    price: 299,
+    freeThreshold: 1999,
+    title: 'Support Premium',
+    icon: 'headset',
+    description: 'Assistance technique 24/7 et maintenance continue'
+  },
+  training: {
+    price: 499,
+    freeThreshold: 2999,
+    title: 'Formation',
+    icon: 'graduation-cap',
+    description: 'Formation complète pour votre équipe'
+  }
+}
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   // Handle scroll effect
   useEffect(() => {
@@ -64,12 +96,15 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="#order"
-                className="inline-block bg-[#F49015] hover:bg-[#F49015]/90 text-white font-bold py-3 px-6 rounded-lg text-base shadow-lg shadow-[#F49015]/20 hover:shadow-xl hover:shadow-[#F49015]/30 transition-all duration-300"
+              <motion.button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-[#F49015] hover:bg-[#F49015]/90 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors text-base"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Demander un devis
-              </Link>
+                <FontAwesomeIcon icon={faRocket} className="text-lg" />
+                Démarrer Votre Projet
+              </motion.button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -129,13 +164,15 @@ export default function Navbar() {
                   exit={{ opacity: 0, x: -20 }}
                   className="pt-6"
                 >
-                  <Link
-                    href="#order"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="inline-block bg-[#F49015] hover:bg-[#F49015]/90 text-white font-bold py-3 px-6 rounded-lg text-base shadow-lg shadow-[#F49015]/20 hover:shadow-xl hover:shadow-[#F49015]/30 transition-all duration-300"
+                  <motion.button
+                    onClick={() => setIsModalOpen(true)}
+                    className="bg-[#F49015] hover:bg-[#F49015]/90 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors text-base"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    Demander un devis
-                  </Link>
+                    <FontAwesomeIcon icon={faRocket} className="text-lg" />
+                    Démarrer Votre Projet
+                  </motion.button>
                 </motion.div>
               </div>
 
@@ -147,6 +184,18 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <OrderFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        sizes={mockSizes}
+        frames={mockFrames}
+        additionalServices={mockAdditionalServices}
+        onCustomOrder={async (size, frame, orderType) => {
+          // Mock implementation
+          return true
+        }}
+      />
     </>
   )
 } 
