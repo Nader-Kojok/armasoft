@@ -17,19 +17,19 @@ export default function Contact() {
     {
       icon: faPhone,
       title: "Téléphone",
-      content: "+225 07 000 00 00",
+      content: "+225 07 02 222 220",
       delay: 0.1
     },
     {
       icon: faEnvelope,
       title: "Email",
-      content: "contact@ArmaSoft.com",
+      content: "info@armasoft.ci",
       delay: 0.2
     },
     {
       icon: faLocationDot,
       title: "Adresse",
-      content: "Abidjan, Côte d'Ivoire\nCocody, Rue des Jardins",
+      content: "Carrefour Solibra, Treichville\nAbidjan, Côte d'Ivoire",
       delay: 0.3
     }
   ]

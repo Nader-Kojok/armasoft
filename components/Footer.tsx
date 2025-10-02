@@ -1,7 +1,7 @@
 'use client'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons/index'
+import { faFacebook, faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons/index'
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons/index'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -90,15 +90,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
                 <FontAwesomeIcon icon={faPhone} className="text-[#F49015] w-4 h-4" />
-                <span className="text-white/70 text-sm">+225 07 000 00 00</span>
+                <span className="text-white/70 text-sm">+225 07 02 222 220</span>
               </li>
               <li className="flex items-center space-x-3">
                 <FontAwesomeIcon icon={faEnvelope} className="text-[#F49015] w-4 h-4" />
-                <span className="text-white/70 text-sm">contact@ArmaSoft.com</span>
+                <span className="text-white/70 text-sm">info@armasoft.ci</span>
               </li>
               <li className="flex items-start space-x-3">
                 <FontAwesomeIcon icon={faLocationDot} className="text-[#F49015] w-4 h-4 mt-1" />
-                <span className="text-white/70 text-sm">Abidjan, Côte d'Ivoire<br/>Cocody, Rue des Jardins</span>
+                <span className="text-white/70 text-sm">Carrefour Solibra, Treichville<br/>Abidjan, Côte d'Ivoire</span>
               </li>
             </ul>
           </motion.div>
@@ -114,30 +114,44 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-white">
               Suivez-nous
             </h3>
-            <div className="flex space-x-4">
+            <div className="flex flex-col space-y-4">
+              {/* Social Media Icons */}
+              <div className="flex space-x-4">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
+                >
+                  <FontAwesomeIcon icon={faFacebook} size="lg" />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
+                >
+                  <FontAwesomeIcon icon={faInstagram} size="lg" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
+                >
+                  <FontAwesomeIcon icon={faTwitter} size="lg" />
+                </a>
+              </div>
+              
+              {/* WhatsApp Button */}
               <a
-                href="https://facebook.com"
+                href="https://wa.me/22507022222220"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
               >
-                <FontAwesomeIcon icon={faFacebook} size="lg" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
-              >
-                <FontAwesomeIcon icon={faInstagram} size="lg" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
-              >
-                <FontAwesomeIcon icon={faTwitter} size="lg" />
+                <FontAwesomeIcon icon={faWhatsapp} className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                <span className="text-sm">Envoyer un message WhatsApp</span>
               </a>
             </div>
           </motion.div>
@@ -164,21 +178,11 @@ export default function Footer() {
                   Politique de confidentialité
                 </Link>
               </div>
-              <p className="text-white/50 text-sm">
-                Developed with <span className="text-[#F49015]">❤️</span> by{' '}
-                <a 
-                  href="https://agencearcane.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-[#F49015] transition-colors"
-                >
-                  Agence Arcane
-                </a>
-              </p>
+
             </div>
           </div>
         </motion.div>
       </div>
     </footer>
   )
-} 
+}
