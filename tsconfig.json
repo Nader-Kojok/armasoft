@@ -19,9 +19,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@local/*": ["/opt/homebrew/var/www/armasoft/*"],
+      "@homebrew/*": ["/opt/homebrew/var/www/armasoft/components/*"]
     },
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "typeRoots": ["./node_modules/@types", "./types", "/opt/homebrew/var/www/armasoft/types"]
   },
   "include": [
     "next-env.d.ts",
@@ -31,4 +33,4 @@
     "types.d.ts"
   ],
   "exclude": ["node_modules"]
-} 
+}
