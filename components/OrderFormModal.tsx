@@ -84,12 +84,9 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
   const services = [
     { id: 'web', name: 'Application Web', description: 'Solution web responsive et moderne' },
     { id: 'mobile', name: 'Application Mobile', description: 'Apps iOS et Android natives' },
-    { id: 'desktop', name: 'Application Bureau', description: 'Logiciels pour Windows, Mac et Linux' },
+    { id: 'logiciels', name: 'Logiciels', description: 'Logiciels pour Windows, Mac et Linux' },
     { id: 'cloud', name: 'Solution Cloud', description: 'Infrastructure cloud scalable' },
-    { id: 'ecommerce', name: 'E-commerce', description: 'Plateforme de vente en ligne' },
-    { id: 'saas', name: 'SaaS', description: 'Software as a Service personnalisé' },
-    { id: 'api', name: 'API & Intégration', description: 'Services web et intégrations' },
-    { id: 'iot', name: 'IoT', description: 'Solutions connectées intelligentes' },
+    { id: 'securite', name: 'Sécurité', description: 'Solutions de cybersécurité et protection des données' },
     { id: 'ai', name: 'Intelligence Artificielle', description: 'ML et IA sur mesure' }
   ]
 
@@ -150,7 +147,7 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
     switch (step) {
       case 1: return selectedSector !== null
       case 2: return selectedServices.length > 0 || otherService.trim() !== ''
-      case 3: return projectDescription.trim() !== ''
+      case 3: return true
       case 4: return contactInfo.name && contactInfo.email && contactInfo.phone && contactInfo.company
       default: return false
     }
@@ -270,13 +267,12 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
       </div>
       
       <div>
-        <label className="text-sm text-white/70 mb-2 block">Description de votre projet</label>
+        <label className="text-sm text-white/70 mb-2 block">Description de votre projet (facultatif)</label>
         <textarea
           value={projectDescription}
           onChange={(e) => setProjectDescription(e.target.value)}
           className="w-full bg-black/20 border border-[#F49015]/20 rounded-lg px-4 py-3 text-white focus:border-[#F49015] focus:outline-none transition-colors min-h-[200px]"
           placeholder="Décrivez votre projet, vos objectifs, vos besoins spécifiques, votre budget approximatif, vos délais..."
-          required
         />
       </div>
     </motion.div>
