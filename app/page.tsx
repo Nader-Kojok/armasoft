@@ -2,10 +2,10 @@
 
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import Solutions from '@/components/Solutions'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import OrderForm from '@/components/OrderForm'
-import Catalogue from '@/components/Catalogue'
 
 export default function Home() {
   return (
@@ -21,8 +21,9 @@ export default function Home() {
       {/* Content sections */}
       <div className="relative z-20">
         <Hero />
+        
         <About />
-        <Catalogue />
+        <Solutions />
 
         <OrderForm 
           sizes={[
@@ -57,7 +58,7 @@ export default function Home() {
             return true // Return a successful result
           }}
         />
-
+        
         {/* Contact and Footer sections */}
         <Contact />
         <Footer />

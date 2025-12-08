@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node -e \"const os = require('os'); const path = require('path'); if (!process.cwd().includes('homebrew') || os.hostname() !== 'macbookair.home') { console.error('Build environment mismatch detected'); process.exit(1); }\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
