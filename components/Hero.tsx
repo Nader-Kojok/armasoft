@@ -133,17 +133,14 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="flex justify-center">
-          <motion.button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-[#F49015] hover:bg-[#F49015]/90 text-white font-medium py-4 px-8 rounded-lg flex items-center justify-center gap-3 transition-colors text-lg"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <FontAwesomeIcon icon={faRocket} className="text-xl" />
-            Démarrer Votre Projet
-          </motion.button>
-        </div>
+        <motion.p 
+          className="text-base md:text-lg text-white/80 max-w-3xl mx-auto text-center leading-relaxed"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          Chaque projet est unique. Nous concevons des solutions 100% sur mesure, adaptées à vos besoins spécifiques et à votre vision.
+        </motion.p>
       </motion.div>
 
       <OrderFormModal
