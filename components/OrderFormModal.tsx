@@ -2,7 +2,7 @@ import React from 'react'
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowRight, faCheck, faBuilding, faIndustry, faShoppingCart, faHeartbeat, faGraduationCap, faLandmark, faPlane, faHome, faGamepad, faUtensils, faRocket } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight, faCheck, faBuilding, faIndustry, faShoppingCart, faHeartbeat, faGraduationCap, faLandmark, faPlane, faHome, faGamepad, faUtensils, faRocket, faGlobe, faMobileScreen, faDesktop, faCloud, faShieldHalved, faBrain } from '@fortawesome/free-solid-svg-icons'
 import ValidationModal from './ValidationModal'
 
 interface ServiceType {
@@ -82,12 +82,12 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
   ]
 
   const services = [
-    { id: 'web', name: 'Application Web', description: 'Solution web responsive et moderne' },
-    { id: 'mobile', name: 'Application Mobile', description: 'Apps iOS et Android natives' },
-    { id: 'logiciels', name: 'Logiciels', description: 'Logiciels pour Windows, Mac et Linux' },
-    { id: 'cloud', name: 'Solution Cloud', description: 'Infrastructure cloud scalable' },
-    { id: 'securite', name: 'Sécurité', description: 'Solutions de cybersécurité et protection des données' },
-    { id: 'ai', name: 'Intelligence Artificielle', description: 'ML et IA sur mesure' }
+    { id: 'web', name: 'Application Web', description: 'Solution web responsive et moderne', icon: faGlobe },
+    { id: 'mobile', name: 'Application Mobile', description: 'Apps iOS et Android natives', icon: faMobileScreen },
+    { id: 'logiciels', name: 'Logiciels', description: 'Logiciels pour Windows, Mac et Linux', icon: faDesktop },
+    { id: 'cloud', name: 'Solution Cloud', description: 'Infrastructure cloud scalable', icon: faCloud },
+    { id: 'securite', name: 'Sécurité', description: 'Solutions de cybersécurité et protection des données', icon: faShieldHalved },
+    { id: 'ai', name: 'Intelligence Artificielle', description: 'ML et IA sur mesure', icon: faBrain }
   ]
 
   const handleServiceToggle = (serviceId: string) => {
@@ -235,8 +235,11 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
                 : 'bg-black/20 border-[#F49015]/20 hover:border-[#F49015]/40 text-white/90'
             }`}
           >
-            <div className="font-bold mb-1">{service.name}</div>
-            <div className="text-xs opacity-75">{service.description}</div>
+            <div className="flex flex-col items-center gap-2">
+              <FontAwesomeIcon icon={service.icon} className="text-2xl" />
+              <div className="font-bold">{service.name}</div>
+              <div className="text-xs opacity-75 text-center">{service.description}</div>
+            </div>
           </button>
         ))}
       </div>
