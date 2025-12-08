@@ -54,10 +54,35 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
   const [contactInfo, setContactInfo] = React.useState({
     name: '',
     email: '',
-    emailPro: '',
     phone: '',
+    phoneCountry: '+225',
     company: ''
   })
+
+  // Pays francophones avec leurs indicatifs
+  const francophoneCountries = [
+    { code: '+225', name: 'Côte d\'Ivoire', flag: '🇨🇮' },
+    { code: '+33', name: 'France', flag: '🇫🇷' },
+    { code: '+32', name: 'Belgique', flag: '🇧🇪' },
+    { code: '+41', name: 'Suisse', flag: '🇨🇭' },
+    { code: '+1', name: 'Canada', flag: '🇨🇦' },
+    { code: '+212', name: 'Maroc', flag: '🇲🇦' },
+    { code: '+216', name: 'Tunisie', flag: '🇹🇳' },
+    { code: '+213', name: 'Algérie', flag: '🇩🇿' },
+    { code: '+221', name: 'Sénégal', flag: '🇸🇳' },
+    { code: '+223', name: 'Mali', flag: '🇲🇱' },
+    { code: '+226', name: 'Burkina Faso', flag: '🇧🇫' },
+    { code: '+227', name: 'Niger', flag: '🇳🇪' },
+    { code: '+228', name: 'Togo', flag: '🇹🇬' },
+    { code: '+229', name: 'Bénin', flag: '🇧🇯' },
+    { code: '+237', name: 'Cameroun', flag: '🇨🇲' },
+    { code: '+241', name: 'Gabon', flag: '🇬🇦' },
+    { code: '+242', name: 'Congo', flag: '🇨🇬' },
+    { code: '+243', name: 'RD Congo', flag: '🇨🇩' },
+    { code: '+261', name: 'Madagascar', flag: '🇲🇬' },
+    { code: '+352', name: 'Luxembourg', flag: '🇱🇺' },
+    { code: '+377', name: 'Monaco', flag: '🇲🇨' }
+  ]
   
   const [modalState, setModalState] = React.useState({
     isOpen: false,
@@ -116,8 +141,8 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
     setContactInfo({
       name: '',
       email: '',
-      emailPro: '',
       phone: '',
+      phoneCountry: '+225',
       company: ''
     })
     
@@ -148,7 +173,7 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
       case 1: return selectedSector !== null
       case 2: return selectedServices.length > 0 || otherService.trim() !== ''
       case 3: return true
-      case 4: return contactInfo.name && contactInfo.email && contactInfo.phone && contactInfo.company
+      case 4: return contactInfo.name && contactInfo.phone && contactInfo.company
       default: return false
     }
   }
@@ -305,35 +330,40 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
           />
         </div>
         <div>
-          <label className="text-sm text-white/70 mb-2 block">Email *</label>
+          <label className="text-sm text-white/70 mb-2 block">Téléphone *</label>
+          <div className="flex gap-2">
+            <select
+              value={contactInfo.phoneCountry}
+              onChange={(e) => setContactInfo({ ...contactInfo, phoneCountry: e.target.value })}
+              className="bg-black/20 border border-[#F49015]/20 rounded-lg px-3 py-3 text-white focus:border-[#F49015] focus:outline-none transition-colors min-w-[140px]"
+            >
+              {francophoneCountries.map((country) => (
+                <option key={country.code} value={country.code} className="bg-[#1a1a1a]">
+                  {country.flag} {country.code}
+                </option>
+              ))}
+            </select>
+            <input
+              type="tel"
+              value={contactInfo.phone}
+              onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
+              className="flex-1 bg-black/20 border border-[#F49015]/20 rounded-lg px-4 py-3 text-white focus:border-[#F49015] focus:outline-none transition-colors"
+              placeholder="XX XX XX XX XX"
+              required
+            />
+          </div>
+        </div>
+        <div>
+          <label className="text-sm text-white/70 mb-2 block">Email (facultatif)</label>
           <input
             type="email"
             value={contactInfo.email}
             onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
             className="w-full bg-black/20 border border-[#F49015]/20 rounded-lg px-4 py-3 text-white focus:border-[#F49015] focus:outline-none transition-colors"
-            required
+            placeholder="votre@email.com"
           />
         </div>
         <div>
-          <label className="text-sm text-white/70 mb-2 block">Email professionnel (facultatif)</label>
-          <input
-            type="email"
-            value={contactInfo.emailPro}
-            onChange={(e) => setContactInfo({ ...contactInfo, emailPro: e.target.value })}
-            className="w-full bg-black/20 border border-[#F49015]/20 rounded-lg px-4 py-3 text-white focus:border-[#F49015] focus:outline-none transition-colors"
-          />
-        </div>
-        <div>
-          <label className="text-sm text-white/70 mb-2 block">Téléphone *</label>
-          <input
-            type="tel"
-            value={contactInfo.phone}
-            onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
-            className="w-full bg-black/20 border border-[#F49015]/20 rounded-lg px-4 py-3 text-white focus:border-[#F49015] focus:outline-none transition-colors"
-            required
-          />
-        </div>
-        <div className="md:col-span-2">
           <label className="text-sm text-white/70 mb-2 block">Entreprise *</label>
           <input
             type="text"
