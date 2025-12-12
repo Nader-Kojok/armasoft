@@ -26,6 +26,19 @@ interface Solution {
 
 const solutions: Solution[] = [
   {
+    id: 'stock',
+    title: 'Stock',
+    description: 'Plus de problème de réapprovisionnement. Alertes automatiques, prévisions et gestion intelligente de vos inventaires.',
+    icon: faBoxes,
+    features: [
+      'Alertes de réapprovisionnement',
+      'Prévisions de stock intelligentes',
+      'Gestion multi-entrepôts',
+      'Inventaires automatisés',
+      'Traçabilité des mouvements'
+    ]
+  },
+  {
     id: 'industrie',
     title: 'Industrie',
     description: 'Logiciel usine de production : rapport entre les matières premières et les produits finis. Optimisez votre chaîne de production avec un suivi en temps réel.',
@@ -49,6 +62,19 @@ const solutions: Solution[] = [
       'Gestion des sous-traitants',
       'Rapports d\'avancement automatiques',
       'Contrôle budgétaire en temps réel'
+    ]
+  },
+  {
+    id: 'commerce',
+    title: 'Commerce',
+    description: 'Logiciel multi-fonction de l\'achat à la vente. Gestion complète du cycle commercial avec caisse, facturation et reporting.',
+    icon: faShoppingCart,
+    features: [
+      'Point de vente (POS)',
+      'Facturation automatisée',
+      'Gestion des clients',
+      'Suivi des achats fournisseurs',
+      'Tableaux de bord commerciaux'
     ]
   },
   {
@@ -88,32 +114,6 @@ const solutions: Solution[] = [
       'Maintenance préventive',
       'Suivi de consommation carburant',
       'Historique complet des déplacements'
-    ]
-  },
-  {
-    id: 'commerce',
-    title: 'Commerce',
-    description: 'Logiciel multi-fonction de l\'achat à la vente. Gestion complète du cycle commercial avec caisse, facturation et reporting.',
-    icon: faShoppingCart,
-    features: [
-      'Point de vente (POS)',
-      'Facturation automatisée',
-      'Gestion des clients',
-      'Suivi des achats fournisseurs',
-      'Tableaux de bord commerciaux'
-    ]
-  },
-  {
-    id: 'stock',
-    title: 'Stock',
-    description: 'Plus de problème de réapprovisionnement. Alertes automatiques, prévisions et gestion intelligente de vos inventaires.',
-    icon: faBoxes,
-    features: [
-      'Alertes de réapprovisionnement',
-      'Prévisions de stock intelligentes',
-      'Gestion multi-entrepôts',
-      'Inventaires automatisés',
-      'Traçabilité des mouvements'
     ]
   }
 ]
