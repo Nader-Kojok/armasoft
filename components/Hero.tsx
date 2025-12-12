@@ -69,7 +69,6 @@ export default function Hero() {
       {/* Modern glass effect and pattern */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(59,146,201,0.1)_0%,_rgba(244,144,21,0.1)_100%)]" />
       
       <motion.div 
         className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto"
@@ -87,6 +86,33 @@ export default function Hero() {
         </motion.h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16">
+          <motion.div
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
+            whileHover={{ scale: 1.05, y: -5 }}
+          >
+            <FontAwesomeIcon icon={faCode} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Solution Logiciel</h3>
+            <p className="text-xs md:text-sm text-white/70 text-center">Logiciels adaptés à vos besoins</p>
+          </motion.div>
+
+          <motion.div
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
+            whileHover={{ scale: 1.05, y: -5 }}
+          >
+            <FontAwesomeIcon icon={faMobileScreen} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Application Web & Mobile</h3>
+            <p className="text-xs md:text-sm text-white/70 text-center">Apps modernes et responsives</p>
+          </motion.div>
+
+          <motion.div
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
+            whileHover={{ scale: 1.05, y: -5 }}
+          >
+            <FontAwesomeIcon icon={faPalette} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">UI/UX Design</h3>
+            <p className="text-xs md:text-sm text-white/70 text-center">Interfaces modernes et intuitives</p>
+          </motion.div>
+
           <motion.div
             className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
             whileHover={{ scale: 1.05, y: -5 }}
@@ -109,36 +135,9 @@ export default function Hero() {
             className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
             whileHover={{ scale: 1.05, y: -5 }}
           >
-            <FontAwesomeIcon icon={faPalette} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
-            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">UI/UX Design</h3>
-            <p className="text-xs md:text-sm text-white/70 text-center">Interfaces modernes et intuitives</p>
-          </motion.div>
-
-          <motion.div
-            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
-            whileHover={{ scale: 1.05, y: -5 }}
-          >
             <FontAwesomeIcon icon={faBrain} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
             <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Intelligence Artificielle</h3>
             <p className="text-xs md:text-sm text-white/70 text-center">Solutions IA innovantes</p>
-          </motion.div>
-
-          <motion.div
-            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
-            whileHover={{ scale: 1.05, y: -5 }}
-          >
-            <FontAwesomeIcon icon={faCode} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
-            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Solution Logiciel</h3>
-            <p className="text-xs md:text-sm text-white/70 text-center">Logiciels adaptés à vos besoins</p>
-          </motion.div>
-
-          <motion.div
-            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
-            whileHover={{ scale: 1.05, y: -5 }}
-          >
-            <FontAwesomeIcon icon={faMobileScreen} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
-            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Application Web & Mobile</h3>
-            <p className="text-xs md:text-sm text-white/70 text-center">Apps modernes et responsives</p>
           </motion.div>
         </div>
 

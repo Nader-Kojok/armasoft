@@ -7,6 +7,21 @@ import { faCloud, faShieldHalved, faMobileScreen, faCode, faBrain, faPalette } f
 export default function About() {
   const features = [
     {
+      icon: faCode,
+      title: "Solutions Logicielles",
+      description: "Développement de logiciels métiers adaptés à vos besoins spécifiques. ERP, CRM et outils de gestion personnalisés."
+    },
+    {
+      icon: faMobileScreen,
+      title: "Applications Web & Mobile",
+      description: "Applications performantes et responsives sur tous les appareils. Technologies modernes pour une expérience utilisateur optimale."
+    },
+    {
+      icon: faPalette,
+      title: "UI/UX Design",
+      description: "Interfaces modernes et intuitives centrées sur l'utilisateur. Nous créons des expériences digitales mémorables qui convertissent."
+    },
+    {
       icon: faCloud,
       title: "Infrastructure Cloud",
       description: "Solutions cloud évolutives et sécurisées. Nous concevons des architectures performantes qui s'adaptent à la croissance de votre entreprise."
@@ -17,24 +32,9 @@ export default function About() {
       description: "Protection avancée de vos données et systèmes. Audits de sécurité, mise en place de pare-feux et solutions de virtualisation complètes."
     },
     {
-      icon: faPalette,
-      title: "UI/UX Design",
-      description: "Interfaces modernes et intuitives centrées sur l'utilisateur. Nous créons des expériences digitales mémorables qui convertissent."
-    },
-    {
       icon: faBrain,
       title: "Intelligence Artificielle",
       description: "Solutions IA sur mesure pour automatiser vos processus. Machine learning, analyse prédictive et chatbots intelligents."
-    },
-    {
-      icon: faCode,
-      title: "Solutions Logicielles",
-      description: "Développement de logiciels métiers adaptés à vos besoins spécifiques. ERP, CRM et outils de gestion personnalisés."
-    },
-    {
-      icon: faMobileScreen,
-      title: "Applications Web & Mobile",
-      description: "Applications performantes et responsives sur tous les appareils. Technologies modernes pour une expérience utilisateur optimale."
     }
   ]
 

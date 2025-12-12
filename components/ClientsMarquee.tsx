@@ -83,32 +83,6 @@ export default function ClientsMarquee() {
         </div>
       </div>
 
-      {/* Stats Bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mt-12"
-      >
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-          {[
-            { value: "50+", label: "Clients satisfaits" },
-            { value: "98%", label: "Taux de satisfaction" },
-            { value: "150+", label: "Projets livrés" },
-            { value: "5 ans", label: "D'expérience" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#F49015]">
-                {stat.value}
-              </div>
-              <div className="text-white/60 text-sm mt-1">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
     </section>
   )
 }
