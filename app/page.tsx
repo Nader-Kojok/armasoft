@@ -3,6 +3,7 @@
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Solutions from '@/components/Solutions'
+import Clients from '@/components/Clients'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import OrderForm from '@/components/OrderForm'
@@ -58,6 +59,9 @@ export default function Home() {
             return true // Return a successful result
           }}
         />
+        
+        {/* Clients section */}
+        <Clients />
         
         {/* Contact and Footer sections */}
         <Contact />

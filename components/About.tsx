@@ -2,29 +2,39 @@
 
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloud, faShieldHalved, faMobileScreen, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faCloud, faShieldHalved, faMobileScreen, faCode, faBrain, faPalette } from '@fortawesome/free-solid-svg-icons'
 
 export default function About() {
   const features = [
     {
       icon: faCloud,
-      title: "Cloud Computing",
-      description: "Infrastructure cloud évolutive et sécurisée pour votre entreprise"
+      title: "Infrastructure Cloud",
+      description: "Solutions cloud évolutives et sécurisées. Nous concevons des architectures performantes qui s'adaptent à la croissance de votre entreprise."
     },
     {
       icon: faShieldHalved,
-      title: "Cybersécurité",
-      description: "Protection avancée contre les menaces numériques"
+      title: "Cybersécurité & Virtualisation",
+      description: "Protection avancée de vos données et systèmes. Audits de sécurité, mise en place de pare-feux et solutions de virtualisation complètes."
+    },
+    {
+      icon: faPalette,
+      title: "UI/UX Design",
+      description: "Interfaces modernes et intuitives centrées sur l'utilisateur. Nous créons des expériences digitales mémorables qui convertissent."
+    },
+    {
+      icon: faBrain,
+      title: "Intelligence Artificielle",
+      description: "Solutions IA sur mesure pour automatiser vos processus. Machine learning, analyse prédictive et chatbots intelligents."
+    },
+    {
+      icon: faCode,
+      title: "Solutions Logicielles",
+      description: "Développement de logiciels métiers adaptés à vos besoins spécifiques. ERP, CRM et outils de gestion personnalisés."
     },
     {
       icon: faMobileScreen,
-      title: "Applications Modernes",
-      description: "Développement d'applications web et mobiles innovantes"
-    },
-    {
-      icon: faGlobe,
-      title: "Transformation Digitale",
-      description: "Accompagnement stratégique dans votre transition numérique"
+      title: "Applications Web & Mobile",
+      description: "Applications performantes et responsives sur tous les appareils. Technologies modernes pour une expérience utilisateur optimale."
     }
   ]
 
@@ -50,8 +60,8 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* Features Grid - 2x2 on desktop, 1 column on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Features Grid - 3 columns on desktop, 2 on tablet, 1 on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
