@@ -52,23 +52,23 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 min-w-[140px]">
               <li>
-                <Link href="#accueil" className="text-white/70 hover:text-[#F49015] transition-colors text-sm">
+                <Link href="#hero" className="text-white/70 hover:text-[#F49015] transition-colors text-sm">
                   Accueil
                 </Link>
               </li>
               <li>
-                <Link href="#apropos" className="text-white/70 hover:text-[#F49015] transition-colors text-sm">
-                  À propos
+                <Link href="#about" className="text-white/70 hover:text-[#F49015] transition-colors text-sm">
+                  Expertise
                 </Link>
               </li>
               <li>
-                <Link href="#catalogue" className="text-white/70 hover:text-[#F49015] transition-colors text-sm">
-                  Catalogue
+                <Link href="#solutions" className="text-white/70 hover:text-[#F49015] transition-colors text-sm">
+                  Solutions
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-white/70 hover:text-[#F49015] transition-colors text-sm">
-                  Contact
+                <Link href="#clients" className="text-white/70 hover:text-[#F49015] transition-colors text-sm">
+                  Clients
                 </Link>
               </li>
             </ul>
