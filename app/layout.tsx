@@ -101,8 +101,6 @@ export default function RootLayout({
   return (
     <html lang="fr" className="dark scroll-smooth">
       <body className={`${rajdhani.variable} ${inter.variable} font-body antialiased selection:bg-[#F49015] selection:text-white`}>
-        {/* Global gradient background extending from top to bottom */}
-        <div className="fixed inset-0 bg-[linear-gradient(180deg,_rgba(59,146,201,0.1)_0%,_rgba(244,144,21,0.1)_100%)] pointer-events-none z-0"></div>
         <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.02] pointer-events-none z-0"></div>
         <Navbar />
         <main className="relative z-10">

@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloud, faShieldHalved, faMobileScreen, faRocket, faBrain, faCode, faServer, faPalette } from '@fortawesome/free-solid-svg-icons'
@@ -42,33 +41,35 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-12">
-      {/* Background image with reduced opacity */}
-      <div className="absolute inset-0 z-0 opacity-15 mix-blend-luminosity">
+      {/* Subtle animated gradient orbs for visual interest */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
-          className="w-full h-full"
+          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 rounded-full bg-[#3B92C9]/10 blur-[100px]"
           animate={{
-            scale: [1, 1.05, 1],
-            rotate: [0, 1, 0],
+            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, 30, 0],
           }}
           transition={{
-            duration: 20,
+            duration: 15,
             repeat: Infinity,
-            ease: "linear"
+            ease: "easeInOut"
           }}
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Hero background - Modern digital technology"
-            fill
-            className="object-cover"
-            priority
-          />
-        </motion.div>
+        />
+        <motion.div
+          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-[#F49015]/10 blur-[100px]"
+          animate={{
+            scale: [1, 1.3, 1],
+            x: [0, -50, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </div>
-      
-      {/* Modern glass effect and pattern */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay" />
       
       <motion.div 
         className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto"
