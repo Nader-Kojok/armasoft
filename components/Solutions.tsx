@@ -131,7 +131,7 @@ export default function Solutions() {
   const activeSolution = solutions[activeTab]
 
   return (
-    <section id="solutions" className="py-32 bg-[#0a0a0a]">
+    <section id="solutions" className="relative py-16 md:py-20">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

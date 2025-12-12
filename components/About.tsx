@@ -39,9 +39,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
-      {/* Background Grid Effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,146,201,0.02)_1px,transparent_1px),linear_gradient(to_right,rgba(59,146,201,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_70%,transparent_100%)]" />
+    <section id="about" className="relative py-16 md:py-20 overflow-hidden">
       
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}

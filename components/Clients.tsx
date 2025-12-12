@@ -52,9 +52,7 @@ const stats = [
 
 export default function Clients() {
   return (
-    <section id="clients" className="relative py-32 overflow-hidden">
-      {/* Background effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#3B92C9]/5 to-transparent" />
+    <section id="clients" className="relative py-16 md:py-20 overflow-hidden">
       
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}

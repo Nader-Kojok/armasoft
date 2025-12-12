@@ -10,14 +10,16 @@ import OrderForm from '@/components/OrderForm'
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen bg-[#0a0a0a]">
+      {/* Unified continuous background - single source of truth */}
+      <div className="fixed inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a] pointer-events-none" />
+      
+      {/* Subtle accent gradients for visual interest */}
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,_rgba(59,146,201,0.15),_transparent)] pointer-events-none" />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,_rgba(244,144,21,0.08),_transparent)] pointer-events-none" />
+      
       {/* Noise texture overlay */}
       <div className="fixed inset-0 bg-[url('/noise.png')] opacity-[0.02] pointer-events-none z-10" />
-
-
-      {/* Accent gradients */}
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#3B92C9]/20 via-transparent to-transparent pointer-events-none" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-[#F49015]/10 via-transparent to-transparent pointer-events-none" />
 
       {/* Content sections */}
       <div className="relative z-20">

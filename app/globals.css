@@ -29,11 +29,7 @@
   
   body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-      165deg,
-      rgb(var(--background-dark)) 0%,
-      rgb(40, 40, 40) 100%
-    );
+    background: rgb(var(--background-dark));
     min-height: 100vh;
   }
 }

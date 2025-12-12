@@ -81,7 +81,7 @@ export default function OrderForm({ sizes, frames, additionalServices, onCustomO
   ]
 
   return (
-    <section id="order" className="relative py-32">
+    <section id="order" className="relative py-16 md:py-20">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.div
