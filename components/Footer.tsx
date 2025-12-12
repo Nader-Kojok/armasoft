@@ -1,7 +1,7 @@
 'use client'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faInstagram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons/index'
+import { faLinkedin, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons/index'
 import { faPhone, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons/index'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -116,28 +116,20 @@ export default function Footer() {
               {/* Social Media Icons */}
               <div className="flex space-x-4">
                 <a
-                  href="https://facebook.com"
+                  href="https://ci.linkedin.com/company/armasoftci"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
                 >
-                  <FontAwesomeIcon icon={faFacebook} size="lg" />
+                  <FontAwesomeIcon icon={faLinkedin} size="lg" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/armasoft.ci/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
                 >
                   <FontAwesomeIcon icon={faInstagram} size="lg" />
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-[#F49015]/10 flex items-center justify-center text-[#F49015] hover:bg-[#F49015] hover:text-white transition-all duration-300"
-                >
-                  <FontAwesomeIcon icon={faTwitter} size="lg" />
                 </a>
               </div>
               
