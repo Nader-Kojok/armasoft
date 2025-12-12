@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloud, faShieldHalved, faMobileScreen, faRocket, faBrain, faCode, faServer } from '@fortawesome/free-solid-svg-icons'
+import { faCloud, faShieldHalved, faMobileScreen, faRocket, faBrain, faCode, faServer, faPalette } from '@fortawesome/free-solid-svg-icons'
 import OrderFormModal from './OrderFormModal'
 import { useState } from 'react'
 
@@ -86,49 +86,58 @@ export default function Hero() {
           Votre solution sur mesure
         </motion.h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6 mb-6 md:mb-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16 max-w-7xl mx-auto">
           <motion.div
-            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-4 md:p-6 flex flex-col items-center"
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
             whileHover={{ scale: 1.05, y: -5 }}
           >
-            <FontAwesomeIcon icon={faServer} className="text-2xl md:text-3xl mb-3 md:mb-4 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
-            <h3 className="font-bold text-white text-base md:text-lg text-center">Infrastructure Cloud</h3>
+            <FontAwesomeIcon icon={faServer} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Infrastructure Cloud</h3>
             <p className="text-xs md:text-sm text-white/70 text-center">Solutions cloud évolutives</p>
           </motion.div>
 
           <motion.div
-            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-4 md:p-6 flex flex-col items-center"
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
             whileHover={{ scale: 1.05, y: -5 }}
           >
-            <FontAwesomeIcon icon={faShieldHalved} className="text-2xl md:text-3xl mb-3 md:mb-4 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
-            <h3 className="font-bold text-white text-base md:text-lg text-center">Cyber Sécurité & Virtualisation</h3>
+            <FontAwesomeIcon icon={faShieldHalved} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Cyber Sécurité & Virtualisation</h3>
             <p className="text-xs md:text-sm text-white/70 text-center">Protection et virtualisation</p>
           </motion.div>
 
           <motion.div
-            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-4 md:p-6 flex flex-col items-center"
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
             whileHover={{ scale: 1.05, y: -5 }}
           >
-            <FontAwesomeIcon icon={faBrain} className="text-2xl md:text-3xl mb-3 md:mb-4 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
-            <h3 className="font-bold text-white text-base md:text-lg text-center">Intelligence Artificielle</h3>
+            <FontAwesomeIcon icon={faPalette} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">UI/UX Design</h3>
+            <p className="text-xs md:text-sm text-white/70 text-center">Interfaces modernes et intuitives</p>
+          </motion.div>
+
+          <motion.div
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
+            whileHover={{ scale: 1.05, y: -5 }}
+          >
+            <FontAwesomeIcon icon={faBrain} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Intelligence Artificielle</h3>
             <p className="text-xs md:text-sm text-white/70 text-center">Solutions IA innovantes</p>
           </motion.div>
 
           <motion.div
-            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-4 md:p-6 flex flex-col items-center"
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
             whileHover={{ scale: 1.05, y: -5 }}
           >
-            <FontAwesomeIcon icon={faCode} className="text-2xl md:text-3xl mb-3 md:mb-4 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
-            <h3 className="font-bold text-white text-base md:text-lg text-center">Solution Logiciel</h3>
-            <p className="text-xs md:text-sm text-white/70 text-center">Développement sur mesure</p>
+            <FontAwesomeIcon icon={faCode} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Solution Logiciel</h3>
+            <p className="text-xs md:text-sm text-white/70 text-center">Logiciels adaptés à vos besoins</p>
           </motion.div>
 
           <motion.div
-            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-4 md:p-6 flex flex-col items-center"
+            className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
             whileHover={{ scale: 1.05, y: -5 }}
           >
-            <FontAwesomeIcon icon={faMobileScreen} className="text-2xl md:text-3xl mb-3 md:mb-4 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
-            <h3 className="font-bold text-white text-base md:text-lg text-center">Application Web & Mobile</h3>
+            <FontAwesomeIcon icon={faMobileScreen} className="text-2xl md:text-3xl mb-4 md:mb-5 text-[#3B92C9] group-hover:text-[#F49015] transition-colors duration-300" />
+            <h3 className="font-bold text-white text-base md:text-lg text-center mb-2">Application Web & Mobile</h3>
             <p className="text-xs md:text-sm text-white/70 text-center">Apps modernes et responsives</p>
           </motion.div>
         </div>
