@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCloud, faShieldHalved, faMobileScreen, faRocket, faBrain, faCode, faServer, faPalette } from '@fortawesome/free-solid-svg-icons'
@@ -41,34 +42,28 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-12">
-      {/* Subtle animated gradient orbs for visual interest */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* Background image with animations */}
+      <div className="absolute inset-0 z-0 opacity-20 mix-blend-luminosity">
         <motion.div
-          className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 rounded-full bg-[#3B92C9]/10 blur-[100px]"
+          className="w-full h-full"
           animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 50, 0],
-            y: [0, 30, 0],
+            scale: [1, 1.05, 1],
+            rotate: [0, 1, 0],
           }}
           transition={{
-            duration: 15,
+            duration: 20,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "linear"
           }}
-        />
-        <motion.div
-          className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-[#F49015]/10 blur-[100px]"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, -50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        >
+          <Image
+            src="/images/hero_bg.png"
+            alt="Hero background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </motion.div>
       </div>
       
       <motion.div 
