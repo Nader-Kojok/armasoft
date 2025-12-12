@@ -33,7 +33,7 @@ export default function About() {
       {/* Background Grid Effect */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(59,146,201,0.02)_1px,transparent_1px),linear_gradient(to_right,rgba(59,146,201,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_70%,transparent_100%)]" />
       
-      <div className="max-w-6xl mx-auto relative">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

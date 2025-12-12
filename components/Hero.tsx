@@ -72,7 +72,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(59,146,201,0.1)_0%,_rgba(244,144,21,0.1)_100%)]" />
       
       <motion.div 
-        className="relative z-10 text-center text-white px-3 max-w-5xl mx-auto"
+        className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
