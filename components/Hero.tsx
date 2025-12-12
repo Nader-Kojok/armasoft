@@ -86,7 +86,7 @@ export default function Hero() {
           Votre solution sur mesure
         </motion.h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-16">
           <motion.div
             className="card group transition-colors duration-300 bg-[#3B92C9]/10 hover:bg-[#F49015]/20 border-1 border-[#3B92C9] hover:border-[#F49015] shadow-lg rounded-lg md:rounded-xl p-5 md:p-8 flex flex-col items-center"
             whileHover={{ scale: 1.05, y: -5 }}
