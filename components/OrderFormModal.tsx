@@ -2,7 +2,7 @@ import React from 'react'
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowRight, faCheck, faBuilding, faIndustry, faShoppingCart, faHeartbeat, faGraduationCap, faLandmark, faPlane, faHome, faGamepad, faUtensils, faRocket, faGlobe, faMobileScreen, faDesktop, faCloud, faShieldHalved, faBrain } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faArrowRight, faCheck, faBuilding, faIndustry, faShoppingCart, faGraduationCap, faLandmark, faPlane, faHome, faUtensils, faEllipsisH, faGlobe, faMobileScreen, faDesktop, faCloud, faShieldHalved, faBrain, faGamepad } from '@fortawesome/free-solid-svg-icons'
 import ValidationModal from './ValidationModal'
 
 interface ServiceType {
@@ -93,17 +93,16 @@ export default function OrderFormModal({ isOpen, onClose, sizes, frames, additio
   const totalSteps = 4
 
   const sectors = [
-    { id: 'startup', name: 'Startup', dimensions: 'Pour les startups en croissance', price: 0, icon: faRocket },
-    { id: 'entreprise', name: 'Entreprise', dimensions: 'Pour les entreprises établies', price: 0, icon: faBuilding },
-    { id: 'industrie', name: 'Industrie', dimensions: 'Secteur industriel et manufacturier', price: 0, icon: faIndustry },
     { id: 'commerce', name: 'Commerce', dimensions: 'Commerce et distribution', price: 0, icon: faShoppingCart },
-    { id: 'sante', name: 'Santé', dimensions: 'Secteur médical et santé', price: 0, icon: faHeartbeat },
-    { id: 'education', name: 'Éducation', dimensions: 'Établissements éducatifs', price: 0, icon: faGraduationCap },
+    { id: 'industrie', name: 'Industrie', dimensions: 'Secteur industriel et manufacturier', price: 0, icon: faIndustry },
+    { id: 'batiment', name: 'Bâtiment', dimensions: 'Construction et BTP', price: 0, icon: faBuilding },
+    { id: 'immobilier', name: 'Immobilier', dimensions: 'Secteur immobilier', price: 0, icon: faHome },
     { id: 'finance', name: 'Finance', dimensions: 'Services financiers et bancaires', price: 0, icon: faLandmark },
     { id: 'transport', name: 'Transport', dimensions: 'Transport et logistique', price: 0, icon: faPlane },
-    { id: 'immobilier', name: 'Immobilier', dimensions: 'Secteur immobilier', price: 0, icon: faHome },
+    { id: 'restauration', name: 'Restauration', dimensions: 'Hôtellerie et restauration', price: 0, icon: faUtensils },
+    { id: 'education', name: 'Éducation', dimensions: 'Établissements éducatifs', price: 0, icon: faGraduationCap },
     { id: 'loisirs', name: 'Loisirs', dimensions: 'Divertissement et loisirs', price: 0, icon: faGamepad },
-    { id: 'restauration', name: 'Restauration', dimensions: 'Hôtellerie et restauration', price: 0, icon: faUtensils }
+    { id: 'autres', name: 'Autres', dimensions: 'Autre secteur d\'activité', price: 0, icon: faEllipsisH }
   ]
 
   const services = [

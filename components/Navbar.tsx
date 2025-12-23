@@ -42,12 +42,38 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
+  const [showCTA, setShowCTA] = useState(false)
 
-  // Handle scroll effect
+  // Handle scroll effect and active section
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
+      
+      // Check if user has scrolled past hero section
+      const heroElement = document.getElementById('hero')
+      if (heroElement) {
+        const heroBottom = heroElement.offsetTop + heroElement.offsetHeight
+        setShowCTA(window.scrollY > heroBottom - 100)
+      }
+      
+      // Detect active section
+      const sections = ['hero', 'about', 'solutions', 'clients']
+      const scrollPosition = window.scrollY + 100
+      
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const { offsetTop, offsetHeight } = element
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section)
+            break
+          }
+        }
+      }
     }
+    
+    handleScroll() // Initial check
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -87,24 +113,36 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="nav-link"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <motion.button
-                onClick={() => setIsModalOpen(true)}
-                className="bg-[#F49015] hover:bg-[#F49015]/90 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors text-base"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <FontAwesomeIcon icon={faRocket} className="text-lg" />
-                Démarrer Votre Projet
-              </motion.button>
+              {navLinks.map((link) => {
+                const sectionId = link.href.replace('#', '')
+                const isActive = activeSection === sectionId
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`nav-link font-semibold ${isActive ? 'text-[#3B92C9] after:w-full' : ''}`}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              })}
+              <AnimatePresence>
+                {showCTA && (
+                  <motion.button
+                    onClick={() => setIsModalOpen(true)}
+                    className="bg-[#F49015] hover:bg-[#F49015]/90 text-white font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors text-base"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.2 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <FontAwesomeIcon icon={faRocket} className="text-lg" />
+                    Démarrer Votre Projet
+                  </motion.button>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Mobile Menu Button */}
@@ -152,7 +190,11 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-2xl font-bold text-white hover:text-[#F49015] transition-colors"
+                      className={`text-2xl font-bold transition-colors ${
+                        activeSection === link.href.replace('#', '') 
+                          ? 'text-[#3B92C9]' 
+                          : 'text-white hover:text-[#F49015]'
+                      }`}
                     >
                       {link.label}
                     </Link>
@@ -166,7 +208,7 @@ export default function Navbar() {
                 >
                   <motion.button
                     onClick={() => setIsModalOpen(true)}
-                    className="bg-[#F49015] hover:bg-[#F49015]/90 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors text-base"
+                    className="bg-[#F49015] hover:bg-[#F49015]/90 text-white font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors text-base"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
